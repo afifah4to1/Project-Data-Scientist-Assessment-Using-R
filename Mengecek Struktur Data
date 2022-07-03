@@ -1,0 +1,21 @@
+#Mengecek Struktur Data
+
+names(trees_df)
+
+#Menampilkan nama kolom dan tipe data setiap kolom
+str(trees_df)
+
+#Terdapat kesalahan penulisan untuk kolom Girth, seharusnya nama kolom tersebut adalah Diameter.
+names(trees_df)[1] <- "Diameter"
+
+#Satuan dari kolom Girth/ Diameter adalah inch, seharusnya adalah ft,sehingga perlu ditambahkan kolom (diameter_ft) yang berisi hasil konversi inch – ft ( 1 inch = 0.08333 ft)
+trees_df$diameter_ft <- trees_df$Diameter*0.08333
+
+#Memunculkan beberapa baris dari dataset.
+head(trees_df)
+
+#Menampilkan hasil statistik deskriptif (min, max, median, mean, dan quartil) untuk semua kolom
+summary(trees_df)
+
+#Mengecek missing value.
+is.na(trees_df)
